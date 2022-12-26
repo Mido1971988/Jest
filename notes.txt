@@ -1,0 +1,21 @@
+** Unit Tests
+Building small testable units
+
+** Integration Tests 
+Integrate and test units
+to work together
+
+** End to End tests (UI Tests E2E)
+User test the whole application 
+
+** Testing Rules : 
+[1] Get the Function to test
+[2] Give Input to the Function
+[3] Dfine what is the output
+[4] Check  For th output
+
+** TDD => Test Driven Development
+
+[1] Think About What your Code will be
+[2] Write The Code
+[3] Test The Code
