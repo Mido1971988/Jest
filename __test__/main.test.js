@@ -250,24 +250,80 @@ it(name, fn, timeout) => it is alias of test
 // });
 
 // --------------------Create your own Matchers 2-------------------
-expect.extend({
-    toBeBetween(received, start, end) {
-        const pass = received > start && received < end;
-        if (pass) {
-            return {
-            message: () => `Expected ${received} To Be Between ${start} And ${end}`,
-            pass: true,
-            };
-        } else {
-            return {
-            message: () => `Expected ${received} To Be Between ${start} And ${end}`,
-            pass: false,
-            };
-        }
-    },
-});
+// expect.extend({
+//     toBeBetween(received, start, end) {
+//         const pass = received > start && received < end;
+//         if (pass) {
+//             return {
+//             message: () => `Expected ${received} To Be Between ${start} And ${end}`,
+//             pass: true,
+//             };
+//         } else {
+//             return {
+//             message: () => `Expected ${received} To Be Between ${start} And ${end}`,
+//             pass: false,
+//             };
+//         }
+//     },
+// });
 
-test("Check If Year Is Between Years Range", () => {
-    expect(1982).toBeBetween(1900, 2020);
-});
+// test("Check If Year Is Between Years Range", () => {
+//     expect(1982).toBeBetween(1900, 2020);
+// });
 
+// --------------------Expect Any and anything and array containing-------------------
+// expect.anything() => Anything except Undefined , Null
+
+// test("Expect Anything", () => {
+//     let x = "A";
+//     expect("Osama").toEqual(expect.anything());
+//     expect(1).toEqual(expect.anything());
+//     expect([1, 2, 3, 4]).toEqual(expect.anything());
+//     expect(x).toEqual(expect.anything());
+// });
+
+// // expect.any(Constructor)
+
+// test("Expect Any Constructor", () => {
+//     expect("Osama").toEqual(expect.any(String));
+// });
+
+// // expect.arrayContaining(array)
+
+// test("Expect Array To Be Found In The Main Array", () => {
+//     const myArray = [1, 2, 3, 4, 5, 6];
+//     expect(myArray).toEqual(expect.arrayContaining([5, 3, 4, 6]));
+// });
+
+// --------------------Code Coverage-------------------
+// const theFilter = require("../main");
+
+// describe("Validate The Input Field", () => {
+//     test("Check If Name Is Empty", () => {
+//     expect(theFilter()).toBe("Unknown");
+//     });
+//     test("Check For Spaces (Start + End)", () => {
+//         expect(theFilter(" Osama ")).toBe("Osama");
+//     });
+//     test("Check If Name Length > 10 Characters", () => {
+//         expect(theFilter("Osama_Mohamed_Elsayed")).toBe("Osama_Moha");
+//     });
+//     test("Check If Name Not Starts With Underscore", () => {
+//         expect(theFilter("_Osama")).toBe("Osama");
+//     });
+// });
+
+// --------------------Mock Function-------------------
+// const mocker1 = require("../main");
+
+// test("Mock Function", () => {
+//     // const mocker = jest.fn(mocker1);
+//     const mocker = jest.fn((name) => `Hello ${name}`);
+//     expect(mocker("Osama")).toBe("Hello Osama");
+//     expect(mocker("Ahmed")).toBe("Hello Ahmed");
+//     expect(mocker("Sayed")).toBe("Hello Sayed");
+//     expect(mocker).toHaveBeenCalled();
+//     expect(mocker).toHaveBeenCalledTimes(3);
+//     expect(mocker).toHaveBeenCalledWith("Ahmed");
+//     expect(mocker).toHaveBeenLastCalledWith("Sayed");
+// });
